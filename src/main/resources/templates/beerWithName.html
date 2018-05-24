@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="navi :: head">
+<body class="background__beer no-repeat cover">
+<div th:include="navi :: menu"></div>
+<section>
+    <h3 th:text="|Search results for beer name &quot;${name}&quot;|"></h3>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Alcohol By Volume</th>
+            <th>Volume [l]</th>
+            <th>Boil Volume [l]</th>
+            <th>Malt [kg]</th>
+            <th>Hops [gr]</th>
+
+        </tr>
+
+        <tr th:each="be:${beer}">
+            <td th:text="${be.name}"></td>
+            <td th:text="${be.abv}"></td>
+            <!--<td th:text="${be.attenuationLevel}"></td>-->
+            <td th:text="${be.volume}"></td>
+            <td th:text="${be.boilVolume}"></td>
+            <td th:text="${be.ingredients.malt}"></td>
+            <!--<td th:each="in, be:${ingredients.malt}"></td>-->
+            <!--<td th:text="${in.name}"></td>-->
+            <td th:text="${be.ingredients.hops}"></td>
+    </table>
+</section>
+</body>
+</html>

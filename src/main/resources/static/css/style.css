@@ -1,0 +1,53 @@
+.no-repeat {
+    background-repeat: no-repeat !important;
+}
+
+.cover {
+    background-size: cover !important;
+}
+
+.background__start {
+    background: url("http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4j/m4/p04jm4h3.jpg");
+}
+
+.background__beer {
+    background: url("http://bestofdrinks.com/wp-content/uploads/2018/02/OLD-HOOKY-BEER-.jpg");
+}
+
+.background__form {
+    background: url("http://www.jumbodeliandwine.com.ar/img/slide/fondo_cervezas.jpg");
+}
+
+.text-muted {
+    color: #ffffff !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff !important;
+}
+
+ul {
+    color: #fff !important;
+}
+
+li {
+    color: #fff !important;
+}
+
+table {
+    background-color: #00000069 !important;
+    width: auto !important;
+    color: #fff !important;
+    margin-left: 2%;
+    margin-top: 2%;
+
+}
+
+form {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+section {
+    margin: 2%;
+}

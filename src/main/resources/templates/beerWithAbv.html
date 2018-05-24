@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="navi :: head">
+<body class="background__beer no-repeat cover">
+<div th:include="navi :: menu"></div>
+<section>
+    <h3 th:text="|Search results for Alcohol By Volume ${abv}|"></h3>
+        <table>
+        <tr th:each="be:${beer}">
+            <td th:text="${be.name}"></td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>

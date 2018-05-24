@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="navi :: head">
+<body class="background__form no-repeat cover">
+<div th:include="navi :: menu"></div>
+<section>
+    <form th:action="@{/findBeerWithAbv}" th:object="${beer}" method="POST" class="needs-validation"
+          novalidate>
+        <div class="col-4">
+            <input type="text" class="form-control" placeholder="Alcohol by Volume"
+                   pattern="[0-9]*\.?[0-9]*" th:field="*{abv}" autofocus required/>
+            <div class="invalid-feedback">
+                Please type number with one decimal e.g.: 4.5, 5.2, 7.2
+            </div>
+        </div>
+        <small id="nameHelp" class="form-text text-muted">Input number with one decimal, e.g.:
+            4.5, 5.2, 7.2
+        </small>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</section>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            let validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>WEKA</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" th:fragment="menu">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/start">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${all} ?  active : ''" href="/findAllBeers">Show
+                        all beers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${beerName} ? active : ''"
+                       href="/showFormBeerWithName">Find beer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${abvShow} ? active : ''" href="/showAbvForm">Find
+                        beer by %</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${maltShow} ? active : ''"
+                       href="/showMaltForm">Find
+                        beer by malt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${hopsShow} ? active : ''"
+                       href="/showHopsForm">Find
+                        beer by hops</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

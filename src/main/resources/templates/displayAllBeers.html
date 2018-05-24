@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="navi :: head">
+<body class="background__beer no-repeat cover">
+<div th:include="navi :: menu"></div>
+<section>
+<h3>All beers</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Alcohol By Volume</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="be:${beer}">
+        <td th:text="${be.name}"></td>
+        <td th:text="${be.abv +'%'}"></td>
+    </tr>
+    </tbody>
+</table>
+</section>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="navi :: head">
+<body class="background__start no-repeat cover">
+<div th:include=" navi :: menu"></div>
+
+<section>
+    <p></p>
+    <h3 th:text="|This app allows you to find craft beer from Scotland’s
+    brewery Brewdog.|"></h3>
+    <h4 th:text="|You can filter this information by:|"></h4>
+    <p></p>
+    <ul>
+        <li>ABV (Alcohol By Volume) attribute,</li>
+        <li>hops attribute,</li>
+        <li>malt attribute and</li>
+        <li>display the list of beers with data from APIs.</li>
+    </ul>
+</section>
+
+</body>
+</html>
